@@ -1,0 +1,31 @@
+# Project: Project2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Date.o lab_exer_09_main.o
+LINKOBJ  = Date.o lab_exer_09_main.o
+LIBS     = -L"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/lib" -L"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/include" -I"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/x86_64-w64-mingw32/include" -I"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/include" -I"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/x86_64-w64-mingw32/include" -I"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/My Software/!Portable/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Date.o: Date.cpp
+	$(CPP) -c Date.cpp -o Date.o $(CXXFLAGS)
+
+lab_exer_09_main.o: lab_exer_09_main.cpp
+	$(CPP) -c lab_exer_09_main.cpp -o lab_exer_09_main.o $(CXXFLAGS)
